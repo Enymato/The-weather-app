@@ -22,8 +22,6 @@ function formatDate (timestamp){
 
 }
 
-
-
 function displayTemperature (response){
 let temperatureElement= document.querySelector("#temperature");
 let cityElement= document.querySelector("#city");
@@ -36,13 +34,26 @@ cityElement.innerHTML= response.data.name;
 descriptionElement.innerHTML= response.data.weather[0].description;
 humidityElement.innerHTML= response.data.main.humidity;
 windElement.innerHTML= Math.round (response.data.wind.speed);
-daytime.innerHTML= formatDate(response.data.dt * 1000);
+timeElement.innerHTML= formatDate(response.data.dt * 1000);
+}
+
+function search(city){
+
+    let apikey="9a3263bb7dd95aedc9d9609db37bad89";
+    let city= "Mexico";
+    let apiUrl= `https://api.openweathermap.org/data/2.5/weather?
+        q={city}&appid={apikey}&units=metric`;
+        
+axios.get(apiUrl). then(displayTemperature);
+}
+function countryData(){
+    event.preventDefault();
+     let city = document.querySelector("#search-input");
+    search (city).value
+
 }
 
 
 
-let apikey="ddaf6a178fcca0c86aa8279f49640c8c";
-let apiUrl= `https://api.openweathermap.org/data/2.5/weather?
-q={city}&appid={API key}&units=metric`;
-
-axios.get(apiUrl). then(displayTemperature);
+let form= documen.querySelector("#search");
+form.addEventListener("submit", countryData);
