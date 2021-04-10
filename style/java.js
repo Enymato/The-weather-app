@@ -21,6 +21,33 @@ function formatDate (timestamp){
     return `${day} ${hours}:${minutes}`;
 
 }
+function displayForecast(){
+    let selectForecastElement= document.querySelector("#forecast");
+    let forecastHTML= `<div class="row">`;
+    let daysTwo=[ "Thu", "Fri", "Sat", "Sun"];
+    daysTwo.forEach(function(day) {
+
+        forecastHTML= forecastHTML +`
+     <div class="col-2">
+        <div class="dayWeather">
+            ${day}
+        </div>
+        <div>
+            <img src="https://ssl.gstatic.com/onebox/weather/48/rain_s_cloudy.png">
+        </div>
+        <div class="forecast-temperature">
+            <span class="forecast-temperature-max"> 20° </span>
+            <span class="forecast-temperature-min"> 8° </span>
+        </div>
+    </div>
+    `;
+    });
+     
+    forecastHTML= forecastHTML + ` </div>`;
+    selectForecastElement.innerHTML= forecastHTML;
+
+
+}
 
 function displayTemperature (response){
 let temperatureElement= document.querySelector("#temperature");
@@ -29,6 +56,9 @@ let descriptionElement= document.querySelector("#description");
 let humidityElement= document.querySelector("#humidity");
 let windElement= document.querySelector("#wind");
 let timeElement= document.querySelector("#dayTime")
+
+
+
 celsiusTemperature= response.data.main.temp;
 temperatureElement.innerHTML= Math.round (response.data.media.temp);
 cityElement.innerHTML= response.data.name;
@@ -75,6 +105,7 @@ function showCelsiusTemperature(event){
 let celsiusTemperature= null;
 
 
+displayForecast();
 
 let form= document.querySelector("#search");
 form.addEventListener("submit", countryData);
