@@ -19,29 +19,39 @@ function formatDate (timestamp){
 ];
     let day = days[date.getDay()];
     return `${day} ${hours}:${minutes}`;
+}
+
+function formatDay(timestamp){
+    let date= new Date (timestamp* 1000);
+    let day = date.getDay();
+    let days= ["Sun", "Mon", "Tues", "Wed", "Thu", "Fri", "Sat"];
+    return days [day];
 
 }
+
 function displayForecast(response){
+    console.log(response.data.daily);
     let forecast= response.data.daily;
     let selectForecastElement= document.querySelector("#forecast");
     let forecastHTML= `<div class="row">`;
-    forecast.forEach(function(forecastDay) {
-
+    forecast.forEach(function(forecastDay, index) {
+        if (index < 6){    
         forecastHTML= forecastHTML +`
      <div class="col-2">
         <div class="dayWeather">
-            ${forecastDay.dt}
+            ${formatDay (forecastDay.dt)}
         </div>
         <div>
             <img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png">
             
         </div>
         <div class="forecast-temperature">
-            <span class="forecast-temperature-max"> ${forecastDay.temp.max} </span>
-            <span class="forecast-temperature-min"> ${forecastDay.temp.min}</span>
+            <span class="forecast-temperature-max"> ${Math.round (forecastDay.temp.max)} °</span>
+            <span class="forecast-temperature-min"> ${Math.round (forecastDay.temp.min)}°</span>
         </div>
     </div>
     `;
+    }
     });
      
     forecastHTML= forecastHTML + ` </div>`;
@@ -53,7 +63,7 @@ function displayForecast(response){
 function getForecast(coordinates){
     console.log(coordinates);
     let apikey="9a3263bb7dd95aedc9d9609db37bad89";
-    let apiUrl =`https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apikey}&unitis=metric`;
+    let apiUrl =`https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apikey}&units=metric`;
  
     axios.get(apiUrl).then(displayForecast);
 }
