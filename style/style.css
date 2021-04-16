@@ -1,7 +1,21 @@
+h1 {
+  text-align: center;
+}
+h2 {
+}
+.first {
+  margin: 50px 0px;
+  text-align: center;
+}
+#search-input {
+  padding-right: 200px;
+}
+
 .weather-app {
   margin: 30px auto;
   padding: 20px;
   border: 1px solid;
+  border-radius: 10px;
 }
 
 .active {
@@ -11,4 +25,12 @@
 }
 .active:hover {
   color: black;
+}
+.footer1 {
+  margin: 10px;
+  margin-top: 25px;
+  text-align: center;
+}
+.footer2 {
+  text-align: center;
 }
