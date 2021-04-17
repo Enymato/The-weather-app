@@ -75,6 +75,7 @@ let descriptionElement= document.querySelector("#description");
 let humidityElement= document.querySelector("#humidity");
 let windElement= document.querySelector("#wind");
 let timeElement= document.querySelector("#dayTime");
+let imageElement=document.querySelector("#pibuImage");
 
 
 
@@ -85,6 +86,9 @@ descriptionElement.innerHTML= response.data.weather[0].description;
 humidityElement.innerHTML= response.data.main.humidity;
 windElement.innerHTML= Math.round (response.data.wind.speed);
 timeElement.innerHTML= formatDate(response.data.dt * 1000);
+
+
+
 
 
 getForecast(response.data.coord);
