@@ -27,6 +27,9 @@ h2 {
   border-radius: 10px;
   background-color: #f7f6f3;
 }
+.backgroundtwo {
+  background-color: blue;
+}
 .second {
   margin-left: 170px;
   font-size: 20px;
