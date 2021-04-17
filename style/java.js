@@ -74,7 +74,7 @@ let cityElement= document.querySelector("#city");
 let descriptionElement= document.querySelector("#description");
 let humidityElement= document.querySelector("#humidity");
 let windElement= document.querySelector("#wind");
-let timeElement= document.querySelector("#dayTime")
+let timeElement= document.querySelector("#dayTime");
 
 
 
