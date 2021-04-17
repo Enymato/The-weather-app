@@ -1,7 +1,16 @@
 h1 {
   text-align: center;
+  margin-bottom: -10px;
+  margin-top: 30px;
 }
 h2 {
+  margin-left: 170px;
+}
+.pibugirl {
+  margin-top: 10px;
+}
+.pibuboy {
+  margin-top: 10px;
 }
 .first {
   margin: 50px 0px;
@@ -12,9 +21,19 @@ h2 {
 }
 
 .weather-app {
-  margin: 30px auto;
+  margin: 40px auto;
+  padding: 20px;
+  border: 1px solid;
+  border-radius: 10px;
 }
-
+.second {
+  margin-left: 170px;
+  font-size: 20px;
+}
+.third {
+  margin-left: 170px;
+  font-size: 20px;
+}
 .active {
   color: black;
   cursor: default;
@@ -23,11 +42,18 @@ h2 {
 .active:hover {
   color: black;
 }
+.pibu {
+  margin-right: 10px;
+  margin-bottom: 30px;
+}
 .footer1 {
   margin: 10px;
   margin-top: 25px;
   text-align: center;
 }
 .footer2 {
+  text-align: center;
+}
+.weatherForecastPreview {
   text-align: center;
 }
