@@ -25,7 +25,7 @@ h2 {
   padding: 20px;
   border: 1px solid;
   border-radius: 10px;
-  background-color: #f7f6f3;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
 }
 .pibuUp {
   display: block;
