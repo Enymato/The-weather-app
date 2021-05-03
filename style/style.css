@@ -30,9 +30,12 @@ h2 {
 }
 .pibuUp {
   display: block;
+  width: fit-content;
   margin-left: auto;
   margin-right: auto;
-  width: 170px;
+}
+.pibuUp img {
+  width: 200px;
 }
 .second {
   margin-left: 170px;
